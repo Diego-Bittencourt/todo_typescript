@@ -1,0 +1,23 @@
+{
+  "name": "todo_typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Diego-Bittencourt/todo_typescript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Diego-Bittencourt/todo_typescript/issues"
+  },
+  "homepage": "https://github.com/Diego-Bittencourt/todo_typescript#readme",
+  "devDependencies": {
+    "typescript": "^4.8.4"
+  }
+}
