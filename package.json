@@ -19,5 +19,8 @@
   "homepage": "https://github.com/Diego-Bittencourt/todo_typescript#readme",
   "devDependencies": {
     "typescript": "^4.8.4"
+  },
+  "dependencies": {
+    "uuid": "^9.0.0"
   }
 }
