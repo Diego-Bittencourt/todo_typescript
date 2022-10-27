@@ -12,8 +12,13 @@ const form =
 //the <> element after the function name and before specifies the element
 //defining the element help limit the methods available to the elements.
 
+// create a function that load the task array from the local storage
+
+
+
 //create an array of Tasks to hold the tasks
-const tasks: Task[] = [];
+const tasks: Task[] = loadTasks();
+tasks.forEach(addListItem);
 //the syntax above says the tasks array is an array of Task
 //If you try to push a different data type, it would show an error
 
@@ -44,9 +49,10 @@ form?.addEventListener('submit', (e) => {
     createdAt: new Date(),
   };
 
+  
+  tasks.push(newTask);
   addListItem(newTask);
   input.value = "";
-  tasks.push(newTask);
 });
 
 function addListItem(task: Task) : void {
@@ -62,7 +68,10 @@ function addListItem(task: Task) : void {
   //add the event listener to change status
   checkbox.addEventListener("change", () => {
     //assigns the task.completed property to the state in the html element
-    task.completed = checkbox.checked
+    task.completed = checkbox.checked;
+
+    //add the tasks arrays to localStorage
+    saveTasks();
   })
 
   //appends the checkbox and the title after the label
@@ -74,5 +83,29 @@ function addListItem(task: Task) : void {
   //appends the li element in the list
   list?.append(item);
 
+  //add the tasks arrays to localStorage
+  saveTasks();
 
+} // end addListItem function
+
+
+function saveTasks(): void {
+
+  //send the array of tasks from the memory to the local storage
+  localStorage.setItem("TASKS", JSON.stringify(tasks))
+}
+
+
+//function that will load the tasks from the local storage and return an array of Task
+function loadTasks(): Task[] {
+  //grab the tasks from local storage
+  const taskJSON = localStorage.getItem("TASKS");
+
+  //if the localstorage is empty, return an empty array
+  if (taskJSON == null) {
+    return [];
+  }
+
+  //return the parsed array
+  return JSON.parse(taskJSON);
 }
