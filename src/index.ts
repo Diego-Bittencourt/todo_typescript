@@ -61,6 +61,9 @@ function addListItem(task: Task) : void {
   const label = document.createElement("label");
   const checkbox = document.createElement("input");
 
+  //style the li element 
+  item.className = "well list-group-item";
+
   //sets the input element to be checkbox type
   checkbox.type = "checkbox";
   checkbox.checked = task.completed;
@@ -109,3 +112,5 @@ function loadTasks(): Task[] {
   //return the parsed array
   return JSON.parse(taskJSON);
 }
+
+console.log("is it working?")

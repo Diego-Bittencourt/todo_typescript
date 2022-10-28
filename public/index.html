@@ -6,23 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="dist/index.js" type="module"></script>
     <title>Document</title>
-    <style>
-        #list {
-            list-style: none;
-            padding: 0;
-        }
-    </style>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <!-- getting the js file from dest folder -->
-    <script src="dest/script.js" defer></script>
+    <script src="dist/index.js" type="module"></script>
 </head>
 <body>
-    <ul id="list">
+    <header class="container">
+        <h1 class="text-center">やることリスト</h1>
+    </header>
+    <main>
+    <ul id="list" class="list-group">
 
     </ul>
-    <form id="new-task-form">
-        <input type="text" id="new-task-title">
-        <button type="submit">Add</button>
+    <form id="new-task-form" class="form-group">
+        <input type="text" id="new-task-title" class="form-control">
+        <button type="submit" class="btn-sm">追加</button>
         
     </form>
+    </main>
 </body>
 </html>

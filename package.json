@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "canvas-confetti": "^1.2.0",
+    "node-sass": "^7.0.3",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
