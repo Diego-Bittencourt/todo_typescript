@@ -62,7 +62,7 @@ function addListItem(task: Task) : void {
   const checkbox = document.createElement("input");
 
   //style the li element 
-  item.className = "well list-group-item";
+  item.className = "well list-group-item checbox";
 
   //sets the input element to be checkbox type
   checkbox.type = "checkbox";
