@@ -60,6 +60,7 @@ function addListItem(task: Task) : void {
   const item = document.createElement("li");
   const label = document.createElement("label");
   const checkbox = document.createElement("input");
+  const bar = document.createElement("hr");
 
   //style the li element 
   item.className = "well list-group-item checbox";
@@ -82,6 +83,9 @@ function addListItem(task: Task) : void {
 
   //appends the label in the li element
   item.append(label);
+
+  //appends the hr to the item
+  item.append(bar);
 
   //appends the li element in the list
   list?.append(item);
