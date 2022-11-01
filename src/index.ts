@@ -3,6 +3,7 @@ import { v4 as uuidV4 } from 'uuid';
 //grab the list, input and button
 const list = document.querySelector<HTMLUListElement>('#list');
 const input = document.querySelector<HTMLInputElement>('#new-task-title');
+const listCount = document.getElementById("count") as HTMLParagraphElement;
 
 //there is another way to define the element through the syntax below
 // const form = document.querySelector<HTMLFormElement>("#new-task-form");
@@ -31,6 +32,8 @@ type Task = {
   createdAt: Date;
 };
 
+//create a count variable to hold the number of tasks
+let count:number = 0;
 
 form?.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -92,6 +95,9 @@ function addListItem(task: Task) : void {
 
   //add the tasks arrays to localStorage
   saveTasks();
+
+  //add to the count variable
+  count++;
 
 } // end addListItem function
 
